@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<!-- Posts Table -->
+	<section class="wrapper style1 align-center">
+		<div class="inner">
+			<h2>Vos Pages</h2>
+			<p>Finally, here are some additional elements you <em>might</em> find useful (and yup, they look fine with any <span class="demo-controls">appearance</span>).</p>
+			<div class="index align-left">
+
+			<!-- Form -->
+				<section>
+					<header>
+						<h3>Article</h3>
+					</header>
+					<div class="content">
+
+						{% form_theme form 'form/fields.html.twig' %}
+
+						{{ form_start(form) }}
+							{{ form_rest(form) }}
+							
+							<ul class="actions">
+								<li>
+									{{ form_widget(form.save) }}
+									<!-- <input type="submit" name="submit" id="submit" value="Send Message" /> -->
+								</li>
+							</ul>
+
+						{{ form_end(form, {'render_rest': false}) }}
+
+					</div>
+				</section>
+
+			</div>
+		</div>
+	</section>
+<!-- Actions -->
+	<section class="spotlight style1 orient-right content-align-center image-position-center onscroll-image-fade-in" id="first">
+		<div class="content">
+			<ul class="actions vertical">
+				<li><a href="{{ path('admin_homepage') }}" class="button">Back to home</a></li>
+			</ul>
+		</div>
+	</section>
+{% endblock %}

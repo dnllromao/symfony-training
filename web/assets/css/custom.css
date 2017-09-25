@@ -1,0 +1,36 @@
+/* question component  */
+.question-group > .question {
+	margin-bottom: 0.8rem;
+	font-weight: 500;
+}
+
+.question-group > .answer {
+	margin-bottom: 2rem;
+}
+
+.question-group > .answer > * {
+	margin-bottom: 0.5rem;
+}
+
+.question-group > .answer ul {
+	padding-left: 2rem;
+}
+
+
+/* action button */
+.action-add-left {
+	display: flex;
+	justify-content: flex-start;
+	margin-bottom: 1rem;
+}
+
+.action-add-right {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 1rem;
+}
+
+td .action-add-left > a {
+	margin-right: 0.3rem;
+	margin-bottom: 1rem;
+}

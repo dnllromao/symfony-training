@@ -7,6 +7,7 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    upload_directory: '%kernel.project_dir%/web/assets/upload/'
 
 framework:
     #esi: ~
@@ -48,6 +49,9 @@ doctrine:
         user: '%database_user%'
         password: '%database_password%'
         charset: UTF8
+        default_table_options:
+            charset: utf8mb4
+            collate: utf8mb4_unicode_ci
         # if using pdo_sqlite as your database driver:
         #   1. add the path in parameters.yml
         #     e.g. database_path: '%kernel.project_dir%/var/data/data.sqlite'
@@ -67,3 +71,8 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+ivory_ck_editor:
+    configs:
+        default:
+            toolbar: standard

@@ -1,13 +1,45 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
     <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <title>{% block title %}MVC avec Pierre Stoffe{% endblock %}</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}" />
+        {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+
+        <!-- Wrapper -->
+            <div id="wrapper" class="divided">
+
+                {% block body %}{% endblock %}
+
+                <!-- Footer -->
+                    <footer class="wrapper style1 align-center">
+                        <div class="inner">
+                            <ul class="icons">
+                                <li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+                                <li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+                                <li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
+                                <li><a href="#" class="icon style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                                <li><a href="#" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
+                            </ul>
+                            <p>&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+                        </div>
+                    </footer>
+
+            </div>
+
+        <!-- Scripts -->
+        {% block javascripts %}
+        <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.scrollex.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.scrolly.min.js') }}"></script>
+        <script src="{{ asset('assets/js/skel.min.js') }}"></script>
+        <script src="{{ asset('assets/js/util.js') }}"></script>
+        <script src="{{ asset('assets/js/main.js') }}"></script>
+        {% endblock %}
     </body>
 </html>
