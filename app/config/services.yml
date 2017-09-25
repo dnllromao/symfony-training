@@ -33,3 +33,8 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+
+    # generete unique fileName and moves file to upload_directory
+    AppBundle\Utils\FileUploader:
+        arguments:
+            $targetDir: '%upload_directory%'

@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Post
@@ -32,6 +33,8 @@ class Post
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=155)
+     * @Assert\NotBlank()
+     * @Assert\Type("string")
      */
     private $title;
 
@@ -39,6 +42,7 @@ class Post
      * @var string
      *
      * @ORM\Column(name="intro", type="string", length=2999, nullable=true)
+     * @Assert\Type("string")
      */
     private $intro;
 
@@ -46,6 +50,7 @@ class Post
      * @var string
      *
      * @ORM\Column(name="content", type="text", nullable=true)
+     * @Assert\Type("string")
      */
     private $content;
 
@@ -53,6 +58,7 @@ class Post
      * @var string
      *
      * @ORM\Column(name="img", type="string", length=255, nullable=true)
+     * @Assert\Image()
      */
     private $img;
 
@@ -60,6 +66,7 @@ class Post
      * @var int
      *
      * @ORM\Column(name="indexOrder", type="integer", nullable=true)
+     * @Assert\Type("int")
      */
     private $indexOrder;
 
