@@ -15,22 +15,32 @@
 					</header>
 					<div class="content">
 
-						{% form_theme form 'form/fields.html.twig' %}
+						{% if error %}
+						    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+						{% endif %}
 
-						{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
-							{{ form_row(form.title) }}
-							{{ form_row(form.intro) }}
-							{{ form_row(form.content) }}
-							{{ form_row(form.imgFile) }}
-							{{ form_row(form.index_order) }}
+						<form action="{{ path('login') }}" method="post">
+							<div class="field">
+								<label for="username">Username:</label>
+								<input type="text" id="username" name="_username" value="{{ last_username }}" />
+							</div>
+						    <div class="field">
+						    	<label for="password">Password:</label>
+						    	<input type="password" id="password" name="_password" />
+						    </div>
+						    {#
+						        If you want to control the URL the user
+						        is redirected to on success (more details below)
+						    #}
+							<input type="hidden" name="_target_path" value="/account" />
 							<ul class="actions">
 								<li>
-									{{ form_widget(form.save) }}
+									<button type="submit">login</button>
 									<!-- <input type="submit" name="submit" id="submit" value="Send Message" /> -->
 								</li>
 							</ul>
-
-						{{ form_end(form, {'render_rest': false}) }}
+						    
+						</form>
 
 					</div>
 				</section>
@@ -43,8 +53,9 @@
 		<div class="content">
 			<ul class="actions vertical">
 				<li><a href="{{ path('admin_homepage') }}" class="button">Back to home</a></li>
-				<li><a href="{{ path('logout') }}" class="button">Back to home</a></li>
 			</ul>
 		</div>
 	</section>
+
+	
 {% endblock %}

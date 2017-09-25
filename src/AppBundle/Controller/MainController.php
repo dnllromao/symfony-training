@@ -22,7 +22,7 @@ class MainController extends Controller
     }
 
     /**
-     * @Route("/{slug}", name="post")
+     * @Route("/{slug}", requirements={"slug": "^(?!login).+"}, name="post")
      */
     public function showAction($slug)
     {
