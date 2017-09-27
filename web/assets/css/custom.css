@@ -34,3 +34,47 @@ td .action-add-left > a {
 	margin-right: 0.3rem;
 	margin-bottom: 1rem;
 }
+
+/* navbar */
+.nav {
+	position: absolute;
+	z-index: 10;
+	width: 100%;
+}
+.nav .navbar {
+	padding: 1.5rem 3rem;
+}
+
+.home .nav a.icon.style2:before {
+    box-shadow: inset 0 0 0 1px #fff;
+    color: #fff;
+}
+.home .nav a.icon.style2:hover:before {
+    box-shadow: inset 0 0 0 1px #47D3E5;
+    color: #47D3E5;
+}
+
+.nav .icon.logout:after {
+	content: 'Logout';
+}
+.nav .icon.login:after {
+	content: 'Login';
+}
+.nav .icon.with-label:after {
+	position: absolute;
+	line-height: 2.75em;
+	color: transparent;
+	transition: all 0.2s ease-in-out;
+	right: 0;
+}
+
+.nav .icon.with-label:hover:after {
+	right: 70px;
+	color: #47D3E5;
+}
+
+.nav .icon.with-label:hover:after {
+	right: 70px;
+	color: #47D3E5;
+}
+

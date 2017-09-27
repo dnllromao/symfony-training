@@ -9,10 +9,22 @@
         <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}" />
         {% endblock %}
     </head>
-    <body>
-
+    <body class="{% block body_class %}{% endblock %}">
+            {% block nav %}
+            <nav class="nav align-right">
+                <div class="navbar">
+                    {% if app.user %}
+                       <a href="{{ path('logout') }}" class="icon style2 with-label logout fa-user"></a>
+                    {% else %}
+                       <a href="{{ path('login') }}" class="icon style2 with-label login fa-circle"></a>
+                    {% endif %}
+                </div>
+            </nav>
+            {% endblock %}
         <!-- Wrapper -->
             <div id="wrapper" class="divided">
+
+                
 
                 {% block body %}{% endblock %}
 

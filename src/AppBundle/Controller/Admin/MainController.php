@@ -42,7 +42,6 @@ class MainController extends Controller
         
         $form->handleRequest($request);
 
-        var_dump($form->isValid());
         // max file upload of 2M set on php.ini
         if($form->isSubmitted() && $form->isValid()) {
             
@@ -86,7 +85,6 @@ class MainController extends Controller
 
         $form->handleRequest($request);
 
-        var_dump($form->isValid());
         if($form->isSubmitted() && $form->isValid()) {
 
             // img procedure
